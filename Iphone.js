@@ -181,3 +181,19 @@ const updateTime = () => {
 }
 setInterval(updateTime, 1000);
 updateTime();
+document.addEventListener("DOMContentLoaded", function () {
+  const zoomInButton = document.getElementById("zoom-in");
+  const zoomOutButton = document.getElementById("zoom-out");
+
+  let currentZoom = 1.0; // Initial zoom level
+
+  zoomInButton.addEventListener("click", function () {
+      currentZoom += 0.1; // Increase zoom by 10%
+      document.body.style.zoom = currentZoom;
+  });
+
+  zoomOutButton.addEventListener("click", function () {
+      currentZoom -= 0.1; // Decrease zoom by 10%
+      document.body.style.zoom = currentZoom;
+  });
+});
